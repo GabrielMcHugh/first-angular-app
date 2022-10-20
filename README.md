@@ -1,5 +1,4 @@
 # Ecommerce App Angular 💵
----
 Ecommerce app built following [this tutorial by Code with Mosh](https://codewithmosh.com/p/angular-master-class) 🎓
 
 ### Log of new concepts 📈
