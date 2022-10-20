@@ -1,9 +1,39 @@
-# Ecommerce App Angular
+# Ecommerce App Angular 💵
 ---
-Ecommerce app built following [this tutorial by Code with Mosh](https://codewithmosh.com/p/angular-master-class)
+Ecommerce app built following [this tutorial by Code with Mosh](https://codewithmosh.com/p/angular-master-class) 🎓
 
-### Log of new concepts
+### Log of new concepts 📈
 **20/10/1995**
 - Typescript Interfaces
     - 'Inline annotation'
     - Defines the shape of an object
+- 'Cohesion' - coding principle
+    - Group related code together with a class
+    - field and methods OOP
+- Access modifiers
+    - In ts you can initalise variable in constructor using them
+- Decorators
+    - Component and NgModule decorators: how angular transforms classes
+    into angular objects
+- String Interpolation
+    - The two `{}` curly braces baby!
+- Directives
+    - Used to change DOM elements
+    - like attributes in html e.g `*ngFor=""`
+- Dependency Injection
+    - The thing that effed me up in that compare the market interview and made me realise I was a scrub that needed to formally study Angular
+- Coupling & Decoupling
+    - You **Tightly Couple** a component to a service when you instantiate a new service in a components constructor
+    - You should **Decouple** a service from a component by including the service as a parameter in the component constructor
+    
+- Dependency Injection
+    - When you register a dependency as a provider in a module, Angular will create a single instance of that class for the entire module. So if there are 100 components in a class, Angular will create a singular service object shared among all those classes This **design pattern** is called a **Singleton**
+    - When you add a service in a component constructor, you are making it a dependancy of that class
+    - When Angular creates a component
+        1. First it will instantiate the dependancies of that class. Then... ->
+        2. It will inject those dependencies into the constructor of that class
+    This is what we call **DEPENDENCY INJECTION**
+
+- @Injectable
+    - Decorator which tells Angular that a class is includes dependencies in its constructor
+    - Isn't needed to be declared in the Component class because it is already included internally
