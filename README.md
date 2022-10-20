@@ -52,3 +52,11 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
 - Event Binding
     - $event
     - Event Bubbling. Event will apply for all surrounding parent elements in html
+- Event filtering
+    - Can do `keyup.enter` which says that the key must be 'enter' for the event instead of putting an if condition in the function call
+- Template Variables
+- Two-Way Binding
+- Pipes
+    - Format data with pipes (current, number, uppercase etc.)
+    - Can make custom pipes
+    - Common Module

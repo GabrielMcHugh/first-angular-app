@@ -14,8 +14,9 @@ import { CoursesService } from "./courses.service";
         </table>
         <div (click)="onDivClicked($event)">  
             <button class="btn"[class.btn-danger]="isActive" (click)="onSave($event)">Save</button>
-        </div>      
-
+        </div>
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+        <p>{{ text | summary:10 }}</p>
 
         <ul>
             <li *ngFor="let author of authors">
@@ -25,8 +26,10 @@ import { CoursesService } from "./courses.service";
     `
 })
 export class CoursesComponent {
+    text = 'Lorem Ipsum is sumplpy dummy text what are you gonna do about it'
     title = "Authors 🏫"
     imageURL = 'https://picsum.photos/200/300'
+    email = "me@example.com";
     colSpan = 2
     isActive = true
     authors;
@@ -42,5 +45,9 @@ export class CoursesComponent {
 
     onDivClicked($event) {
         console.log("Div was clicked")
+    }
+
+    onKeyUp() {
+        console.log(this.email)
     }
 }
