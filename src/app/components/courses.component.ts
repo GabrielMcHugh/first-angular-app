@@ -1,22 +1,23 @@
 import { Component } from "@angular/core";
+import { AuthorsService } from "./authors.service";
 import { CoursesService } from "./courses.service";
 
 @Component({
     selector: 'courses',
     template: `
-        <h2>{{title}}</h2>
+        <h2>{{authors.length}} {{title}}</h2>
         <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
+            <li *ngFor="let author of authors">
+                {{ author }}
             </li>
         <ul>
     `
 })
 export class CoursesComponent {
-    title = "list of courses 🏫"
-    courses;
+    title = "Authors 🏫"
+    authors;
 
-    constructor(service: CoursesService) {
-        this.courses = service.courses
+    constructor(service: AuthorsService) {
+        this.authors = service.Authors
     }
 }
