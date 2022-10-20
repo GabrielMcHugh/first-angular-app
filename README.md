@@ -1,8 +1,9 @@
 # Ecommerce App Angular 💵
 Ecommerce app built following [this tutorial by Code with Mosh](https://codewithmosh.com/p/angular-master-class) 🎓
 
-### Log of new concepts 📈
+## Log of new concepts 📈
 **20/10/1995**
+### Fundamentals
 - Typescript Interfaces
     - 'Inline annotation'
     - Defines the shape of an object
@@ -20,12 +21,12 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - Used to change DOM elements
     - like attributes in html e.g `*ngFor=""`
 - Dependency Injection
-    - The thing that effed me up in that compare the market interview and made me realise I was a scrub that needed to formally study Angular
 - Coupling & Decoupling
     - You **Tightly Couple** a component to a service when you instantiate a new service in a components constructor
     - You should **Decouple** a service from a component by including the service as a parameter in the component constructor
-    
+
 - Dependency Injection
+    - The thing that effed me up in that compare the market interview and made me realise I was a scrub that needed to formally study Angular
     - When you register a dependency as a provider in a module, Angular will create a single instance of that class for the entire module. So if there are 100 components in a class, Angular will create a singular service object shared among all those classes This **design pattern** is called a **Singleton**
     - When you add a service in a component constructor, you are making it a dependancy of that class
     - When Angular creates a component
@@ -36,3 +37,18 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
 - @Injectable
     - Decorator which tells Angular that a class is includes dependencies in its constructor
     - Isn't needed to be declared in the Component class because it is already included internally
+### Displaying Data and Handling Events
+- Property Binding and Attribute Binding
+    - one way
+    - Dom is a tree of objects vs HTML is a markup language representing the DOM in text
+    - 1 to 1 mapping of html and DOM properties
+    - Property binding targets the DOM
+    - to target html we use `[attr.colspan]` colspan being an example
+- Class Binding
+    - Can bind conditional classes by specifying `[class.btn]="{{ condition }}` (btn being an example class)
+- Style Binding
+    - Similar to class binding
+    - Applies inline styles based on condition e.g. `[style.backgroundColor]="isActive ? 'blue' : 'white'"`
+- Event Binding
+    - $event
+    - Event Bubbling. Event will apply for all surrounding parent elements in html
