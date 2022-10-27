@@ -8,12 +8,14 @@ import { CoursesService } from './components/courses.service';
 import { AuthorsService } from './components/authors.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponentComponent
   ],
   imports: [
     BrowserModule,
