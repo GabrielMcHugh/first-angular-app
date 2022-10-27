@@ -60,3 +60,8 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - Format data with pipes (current, number, uppercase etc.)
     - Can make custom pipes
     - Common Module
+### Building Re-usable components
+- Component API's
+    - Inputs and Outputs
+    - Input and Output properties
+    - 
