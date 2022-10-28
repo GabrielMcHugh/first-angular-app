@@ -1,9 +1,11 @@
 <h2>Angular</h2>
 <div class="container text-center">
     <div class="row">
+
         <div class="col">
             <courses></courses>
         </div>
+
         <div class="col">
             <favourite [isFavorite]="post.isFavourite" (change)="onFavouriteChanged($event)">
                 <ng-container class="heading">Heading</ng-container>
@@ -13,8 +15,10 @@
                 </ng-container>
             </favourite>
         </div>
+
         <div class="col">
             <directives></directives>
         </div>
+        
     </div>
 </div>
