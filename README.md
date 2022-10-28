@@ -76,3 +76,13 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - or you can have your styling not be specific and instead apply globally
 - ngContent & ngContainer
     - Insert html from parent component by using ngContent in the child and ngContainer in the parent
+<p class="callout info">💡 Zencoding: allows you to quickly write html in vsCode</p>
+### Directives
+Changes the appearance or behaviour of the DOM using attribute directives
+- ngIf vs hidden
+    - ngIf: condition rendering of html elements. rebuild Dom
+    - hidden: hides and element
+    - For small trees it doesnt matter what you use
+    - Use ngIf to free up resources
+    - Use hidden if peformance cost of rebuilding that subtree is too high
+- ngSwitchCase
