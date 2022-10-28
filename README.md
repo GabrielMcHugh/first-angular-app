@@ -76,7 +76,8 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - or you can have your styling not be specific and instead apply globally
 - ngContent & ngContainer
     - Insert html from parent component by using ngContent in the child and ngContainer in the parent
-<p class="callout info">💡 Zencoding: allows you to quickly write html in vsCode</p>
+💡 Zencoding: allows you to quickly write html in vsCode
+
 ### Directives
 Changes the appearance or behaviour of the DOM using attribute directives
 - ngIf vs hidden

@@ -1,20 +1,17 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'directives',
-    template: `
-        <h2 (click)="onClick()">Directives</h2>
-        <div *ngIf="courses; then coursesList else noCourses"></div>
-        <ng-template #coursesList>
-            List of courses
-        </ng-template>
-        <ng-template #noCourses>
-            No courses yet
-        </ng-template>
-    `
+    templateUrl: './directives.component.html',
+    styles: [`
+        .card {
+            margin-bottom: 1rem
+        }
+    `]
 })
 export class DirectivesComponent {
     courses: boolean = true;
+    viewMode: 'map' | 'list' = 'map'
 
     onClick() {
         this.courses = !this.courses
