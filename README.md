@@ -39,11 +39,17 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - Isn't needed to be declared in the Component class because it is already included internally
 ### Displaying Data and Handling Events
 - Property Binding and Attribute Binding
-    - one way
-    - Dom is a tree of objects vs HTML is a markup language representing the DOM in text
-    - 1 to 1 mapping of html and DOM properties
-    - Property binding targets the DOM
-    - to target html we use `[attr.colspan]` colspan being an example
+    - So, in HTML, attributes are defined on HTML elements and are supposed to be the *initial values* passed to them at the time of creating those elements. Once the browser creates the DOM (a.k.a. after rendering the page), the HTML elements become objects (node objects) and hence, they have properties.
+    - An attribute is the additional information defined in an HTML element to be initialized upon creation. A property is a characteristic of a DOM node(object) that you can manipulate.
+    Thus:
+    - Attribute – Represents the initial value and does not change.
+    - Property – Represents the current value and can change.
+    - Things can get a little complex in our heads when trying to understand whether we should use a property or attribute. But for the most part, we will be using properties. **That’s because many HTML Attributes have a 1 to 1 mapping with DOM properties.**
+    - Thus for most values we could use either property or attribute binding which would target the same value. But again, default to property binding
+    - Property binding uses square brackets `[class]="myClassBinding"`
+    -  Attribute binding uses `[attr.colspan]` i.e. we have to specify `attr` first
+    - An example of an attribute and not a property is `colspan` this is because it is not meant to be changed. Thus we have to use attribute binding here and not property binding
+    
 - Class Binding
     - Can bind conditional classes by specifying `[class.btn]="{{ condition }}` (btn being an example class)
 - Style Binding
@@ -60,6 +66,9 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - Format data with pipes (current, number, uppercase etc.)
     - Can make custom pipes
     - Common Module
+
+**28/10/22**
+
 ### Building Re-usable components
 - Component API's
     - Inputs and Outputs
@@ -76,7 +85,7 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
     - or you can have your styling not be specific and instead apply globally
 - ngContent & ngContainer
     - Insert html from parent component by using ngContent in the child and ngContainer in the parent
-💡 Zencoding: allows you to quickly write html in vsCode
+- 💡 Zen Coding: allows you to quickly write html in vsCode
 
 ### Directives
 Changes the appearance or behaviour of the DOM using attribute directives
@@ -87,3 +96,7 @@ Changes the appearance or behaviour of the DOM using attribute directives
     - Use ngIf to free up resources
     - Use hidden if peformance cost of rebuilding that subtree is too high
 - ngSwitchCase
+- ngFor and trackBy
+    - ngFor detects changes of data by object reference. The contents of the object could be the same but the DOM would still rebuild because its detected a difference object reference. trackBy allows us to pass in our own function that compares our own choice of data, for instance, the values of objects, which may or may not change, and updates the elements by that instead.
+- Leading asterick
+    - `*` converts the element into an `ng-template` and the directive into an property binding 

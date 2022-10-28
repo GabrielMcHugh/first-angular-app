@@ -27,3 +27,14 @@
         <div *ngSwitchDefault>Otherwise</div>
     </div>
 </div>
+<div class="card text-dark">
+    <button 
+    class="btn btn-primary" 
+    (click)="loadCourses()">
+        Load Courses</button>
+    <ul>
+        <li *ngFor="let class of classes; index as i; even as isEven; trackBy: trackCourse" >
+            {{i}} - {{ class.name}} <span *ngIf="isEven">(EVEN)</span>
+        </li>
+    </ul>
+</div>

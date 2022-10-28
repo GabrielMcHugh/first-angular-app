@@ -12,8 +12,21 @@ import { Component, Input } from "@angular/core";
 export class DirectivesComponent {
     courses: boolean = true;
     viewMode: 'map' | 'list' = 'map'
+    classes;
 
     onClick() {
         this.courses = !this.courses
+    }
+
+    loadCourses() {
+        this.classes = [
+            { id: 1, name: 'Spanish'},
+            { id: 2, name: 'English'},
+            { id: 3, name: 'French'},
+        ]
+    }
+
+    trackCourse(index, course) {
+        return course ? course.id : undefined
     }
 }
