@@ -9,13 +9,15 @@ import { AuthorsService } from './components/authors.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
+import { DirectivesComponent } from './components/directives.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     SummaryPipe,
-    FavoriteComponentComponent
+    FavoriteComponentComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

@@ -63,5 +63,26 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
 ### Building Re-usable components
 - Component API's
     - Inputs and Outputs
-    - Input and Output properties
-    - 
+    - `@Input()` and `@Output` properties = the API
+    - **Aliasing** Can supply an alias to the Input so you don't have to change it every time ***keep the contract stable***
+- Passing Event Data
+    - Output is an event emitter
+    - Can emit an object with custom data instead of a DOM event object
+- Templates and styles can be in the component or their own file
+- **View Encapsulation**
+    - How styling is scoped to just the component
+    - Can either emulate the Shadow dom by adding unique attributes to the component html
+    - You can also specify native which uses the shadow dom
+    - or you can have your styling not be specific and instead apply globally
+- ngContent & ngContainer
+    - Insert html from parent component by using ngContent in the child and ngContainer in the parent
+<p class="callout info">💡 Zencoding: allows you to quickly write html in vsCode</p>
+### Directives
+Changes the appearance or behaviour of the DOM using attribute directives
+- ngIf vs hidden
+    - ngIf: condition rendering of html elements. rebuild Dom
+    - hidden: hides and element
+    - For small trees it doesnt matter what you use
+    - Use ngIf to free up resources
+    - Use hidden if peformance cost of rebuilding that subtree is too high
+- ngSwitchCase
