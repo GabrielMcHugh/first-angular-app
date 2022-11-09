@@ -61,6 +61,8 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
 - Event filtering
     - Can do `keyup.enter` which says that the key must be 'enter' for the event instead of putting an if condition in the function call
 - Template Variables
+    - `<input #phone/>` allows you to reference that element so e.g. `(click)="callPhone(phone.value)"`
+    - can also specify a directive `#firstName="ngModel"`
 - Two-Way Binding
 - Pipes
     - Format data with pipes (current, number, uppercase etc.)
@@ -89,6 +91,8 @@ Ecommerce app built following [this tutorial by Code with Mosh](https://codewith
 
 ### Directives
 Changes the appearance or behaviour of the DOM using attribute directives
+- Attribute directives modify appearance
+- Structural add or remove elements
 - ngIf vs hidden
     - ngIf: condition rendering of html elements. rebuild Dom
     - hidden: hides and element
@@ -100,3 +104,81 @@ Changes the appearance or behaviour of the DOM using attribute directives
     - ngFor detects changes of data by object reference. The contents of the object could be the same but the DOM would still rebuild because its detected a difference object reference. trackBy allows us to pass in our own function that compares our own choice of data, for instance, the values of objects, which may or may not change, and updates the elements by that instead.
 - Leading asterick
     - `*` converts the element into an `ng-template` and the directive into an property binding 
+- ngStyle
+- Safe Traversal Operator
+    - `obj?.name` The `?` is a null check
+- Custom directives
+    - `ng g d [name]` in the console
+    - HostListener
+    - Can use @Inputs to provide parameters to your directive
+
+### Template-driven Forms
+- Building a bootstrap form
+    - 💡Zencoding tip: `label+input[type='text'].form-control`
+    - `for` attribute of label will make the label highlight the input with the corresponding `id`
+- Types of Forms
+    - Control Objects
+        - FormGroup (contains properties) for sections
+        - FormControl (contains properties) for each input
+    - Creating Controls
+        - Directives: **Template-driven**
+            - Good for simple forms
+            - Simple Validation
+            - Easier and less code
+        - Code: **Reactive**
+            - More control over validation logic
+            - Good for complex forms
+            - Unit testable
+- ngModel
+    - When you apply the `ngModel` directive without any object it will create a new object an associate it with this inputField under the hood. However it needs a `name=""` attribute to distinguish it from other inputs
+- Adding Validation
+    - `required`
+    - check `ngModel.touched && ngModel.valid`
+- Specific Validation Errors 
+    - standard HTML5 attiributes
+    - `minLength="3"`
+    - `maxLength=""`
+    - `pattern="banana"` can be a regex
+    - check `ngModel.errors.required/minlength/maxlength` or other errors
+    - can use `.errors.properties` to return a dynamic error message
+- Styling Invalid Input Fields
+    - angular adds classes depending on `ngModel` property values e.g. `ng-dirty`
+    - Use them to style the field
+- ngForm
+    - `ngForm` auto applied. Has a method called `(ngSubmit)=""` can create a template variable `#f="ngForm"` and access the values of the fields in the `f.value` object
+- ngModelGroup
+    - subProperty in value object. `ngModelGroup="contact"`
+    - then can access in `f.value.contact` can also assign that group to a template variable
+- Control Classes and Directives
+    - `FormControl` -> `ngModel` applied
+    - `FormGroup` -> `ngForm & ngModelGroup` applied
+        - `ngForm` exposes the `(ngSubmit)` property which handles the submit function on forms
+        - `ngModelGroup` doesn't have that output property because it doesn't make sense to submit a part of a form. It is used to organise the form into groups.
+- Disabling the Submit Button
+    - Bind form button to `[disabled]=!ngForm.valid`
+- Working with:
+    Checkboxes:
+    - there is a Pipe called `json` so `{{f.value | json}}` which will format it into json
+    Drop-down lists
+    - `<select><option *ngFor="entry of array">...`
+    - Someimtes instead of just returning the value, you may want to return the actual object of the selected option. Use `[ngValue]="entry"` to bind to the entry object
+    Radio Buttons
+    - `ngFor="let method of array` to generate radio buttons
+    - `[value]="method.id"` for value and interpolation to display text `{{method.name}}`
+### Reactive Forms
+- Creating Controls Pragmatically
+    - `AbstractControl`: the Parent of `FormControl` and `FormGroup`
+    - `form = new FormGroup({ username: new FormControl()})` in the component
+    - in the template associate the `[formGroup]="form"`
+    - add `formControlName="username"` to the input element
+- Adding Validation
+- Specific Validation Errors
+- Implementing Custom Validation
+- Async Operators
+- Async Validators
+- Displaying a Loader Image
+- Validation Upon Submitting
+- Nested FormGroups
+- FormArray
+- FormBuilder
+- Quick Recap
