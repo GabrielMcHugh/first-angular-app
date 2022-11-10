@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './components/courses.component';
 import { CoursesService } from './components/courses.service';
 import { AuthorsService } from './components/authors.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
 import { DirectivesComponent } from './components/directives.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { DirectivesComponent } from './components/directives.component';
     CoursesComponent,
     SummaryPipe,
     FavoriteComponentComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CoursesService,

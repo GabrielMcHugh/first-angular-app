@@ -172,10 +172,14 @@ Changes the appearance or behaviour of the DOM using attribute directives
     - in the template associate the `[formGroup]="form"`
     - add `formControlName="username"` to the input element
 - Adding Validation
-- Specific Validation Errors
+    - `Validators` replicates the html validators - these methods are static members e.g. `Validators.email/required/maxlength`
+    - To add multiple, pass them using an array
 - Implementing Custom Validation
-- Async Operators
+    - `vallidatorfn`
+    - add custom validators to a `./common/validators` folder
 - Async Validators
+    - Async validators rturn a promise or an observable of validation errors 
+    - `<>` angle brackets are what the type should return so `Promise<Validations Errors | null>`
 - Displaying a Loader Image
 - Validation Upon Submitting
 - Nested FormGroups
