@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
 import { DirectivesComponent } from './components/directives.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { PostsComponentComponent } from './components/posts-component/posts-component.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     SummaryPipe,
     FavoriteComponentComponent,
     DirectivesComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostsComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     CoursesService,

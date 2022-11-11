@@ -185,4 +185,31 @@ Changes the appearance or behaviour of the DOM using attribute directives
 - Nested FormGroups
 - FormArray
 - FormBuilder
-- Quick Recap
+### Consuming HTTP Services
+#### Part 1
+- JSONPlaceHolder
+    - 💡Dependency Injection doesn't work unless you register all dependencies as `providers: []`
+    - Http requests return Observables for non-blocking operations
+    - Hinted at to Promises and Observables
+- Getting Data
+**CRUD Operations**
+- Creating Data
+- Updating Data
+- Deleting Data
+- OnInit Interface
+- Seperation of Concerns
+- Extracting a Service
+**Error Handling**
+- Handling Errors
+- Handling Unexpected Errors
+- Handling Expected Errors
+- Throwing Application Specific Errors
+- Code Review
+
+- Importing Observable Operators and Factory Methods
+- Global Error Handling+
+- Extracting a Reusable Error Handling Method
+- Extracting a Reusable Data Service
+- The Map Operator
+- Optimistic vs Pessimistic Updates
+- Observables vs Promises
