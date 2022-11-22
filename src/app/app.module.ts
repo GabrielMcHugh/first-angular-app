@@ -1,63 +1,52 @@
+import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt/angular2-jwt';
+import { OrderService } from './services/order.service';
+import { MockBackend } from '@angular/http/testing';
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
+import { RouterModule } from '@angular/router'; 
+
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './components/courses.component';
-import { CoursesService } from './components/courses.service';
-import { AuthorsService } from './components/authors.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SummaryPipe } from './summary.pipe';
-import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
-import { DirectivesComponent } from './components/directives.component';
-import { ChangePasswordComponent } from './components/change-password/change-password.component';
-import { PostsComponentComponent } from './components/posts-component/posts-component.component';
-import { NavbarComponentComponent } from './components/navbar-component/navbar-component.component';
-import { HomeComponentComponent } from './components/home-component/home-component.component';
-import { GithubProfileComponentComponent } from './components/github-profile-component/github-profile-component.component';
-import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
-import { RouterModule } from '@angular/router';
-import { FavouriteContainerComponent } from './components/favourite-container/favourite-container.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NoAccessComponent } from './no-access/no-access.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    SummaryPipe,
-    FavoriteComponentComponent,
-    FavouriteContainerComponent,
-    DirectivesComponent,
-    ChangePasswordComponent,
-    PostsComponentComponent,
-    NavbarComponentComponent,
-    HomeComponentComponent,
-    GithubProfileComponentComponent,
-    NotFoundComponentComponent,
+    LoginComponent,
+    SignupComponent,
+    AdminComponent,
+    HomeComponent,
+    NotFoundComponent,
+    NoAccessComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    HttpModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponentComponent },
-      {path: 'components1', component: CoursesComponent},
-      {path: 'components2', component: FavouriteContainerComponent},
-      {path: 'components3', component: DirectivesComponent},
-      {path: 'components4', component: ChangePasswordComponent},
-      {path: 'components5', component: PostsComponentComponent},
-      {path: 'followers/:username', component: GithubProfileComponentComponent},
-      {path: 'followers', component: GithubProfileComponentComponent},
-      {path: 'posts', component: PostsComponentComponent},
-      {path: '**', component: NotFoundComponentComponent},
-
-    ]),
+      { path: '', component: HomeComponent },
+      { path: 'admin', component: AdminComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'no-access', component: NoAccessComponent }
+    ])
   ],
   providers: [
-    CoursesService,
-    AuthorsService,
-    
+    OrderService,
+
+    AuthService,
+
+    // For creating a mock back-end. You don't need these in a real app. 
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent]
 })
