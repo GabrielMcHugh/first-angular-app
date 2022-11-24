@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "oshop-1e9ac",
+    "staging": "oshop-1e9ac"
+  },
+  "targets": {},
+  "etags": {}
+}
